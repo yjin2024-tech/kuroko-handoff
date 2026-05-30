@@ -1,0 +1,27 @@
+{
+  "name": "kuroko-handoff",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "kuroko-handoff": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "verify": "node scripts/verify-demo.mjs",
+    "privacy:audit": "node scripts/privacy-audit.mjs",
+    "audit:push": "node scripts/audit-public-release.mjs",
+    "audit:public": "node scripts/audit-public-release.mjs --dir=public_release/kuroko-handoff",
+    "build:public-release": "node scripts/build-public-release.mjs",
+    "build:public-git-repo": "node scripts/build-public-git-repo.mjs",
+    "install:hooks": "node scripts/install-git-hooks.mjs",
+    "demo:package": "node --import tsx src/cli.ts package --config examples/shigyo/config.json --out examples/out/shigyo",
+    "demo:restore-package": "node --import tsx src/cli.ts restore-package --input examples/shigyo/partner_return --mapping examples/out/shigyo/local_only/mapping.local.json --out examples/out/shigyo/internal_restored"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}
