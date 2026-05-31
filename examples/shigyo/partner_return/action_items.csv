@@ -1,0 +1,5 @@
+case_id,priority,recipient,next_action,reason,owner
+{{CASE_ID_001}},high,{{CUSTOM_001}},展示会ブース設営とWebページ改修の見積書を依頼,対象経費{{AMOUNT_002}}と{{AMOUNT_003}}の根拠資料が不足しているため,internal
+{{CASE_ID_001}},high,{{CUSTOM_001}},展示会名と出展予定日を確認,販路開拓目的とスケジュールを申請書に反映するため,internal
+{{CASE_ID_001}},medium,{{CUSTOM_004}},加工事例と主なターゲット業種を確認,カタログとWebページの訴求内容を具体化するため,internal
+{{CASE_ID_001}},medium,internal,{{DATE_002}}までの資料回収スケジュールを作成,外部下書きを社内確認へ戻す期限を明確にするため,internal

@@ -1,0 +1,25 @@
+{
+  "name": "kuroko-handoff",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "kuroko-handoff": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "verify": "node scripts/verify-demo.mjs",
+    "privacy:audit": "node scripts/privacy-audit.mjs",
+    "demo:package": "node --import tsx src/cli.ts package --config examples/shigyo/config.json --out examples/out/shigyo",
+    "demo:restore-package": "node --import tsx src/cli.ts restore-package --input examples/shigyo/partner_return --mapping examples/out/shigyo/local_only/mapping.local.json --out examples/out/shigyo/internal_restored",
+    "demo:word-fixture": "node scripts/create-word-case-fixture.mjs",
+    "demo:word-package": "node scripts/create-word-case-fixture.mjs && node --import tsx src/cli.ts package --config examples/word_case/config.json --input-dir examples/word_case/case_folder --out examples/out/word_case",
+    "demo:word-restore-package": "node --import tsx src/cli.ts restore-package --input examples/word_case/partner_return --mapping examples/out/word_case/local_only/mapping.local.json --out examples/out/word_case/internal_restored"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}

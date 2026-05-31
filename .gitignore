@@ -1,0 +1,6 @@
+node_modules/
+dist/
+examples/out/
+public_release/
+npm-debug.log*
+.worktrees/

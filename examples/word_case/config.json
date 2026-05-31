@@ -1,0 +1,37 @@
+{
+  "project": {
+    "id": "word-case-folder-demo",
+    "title": "Word案件フォルダハンドオフデモ",
+    "locale": "ja-JP"
+  },
+  "dictionary": "dictionary.txt",
+  "intake": {
+    "mode": "folder",
+    "maxFileBytes": 5242880,
+    "unsupportedPolicy": "record",
+    "blockedPolicy": "fail"
+  },
+  "detection": {
+    "engine": "simple"
+  },
+  "detectors": [
+    { "id": "custom_dictionary", "type": "dictionary", "entity": "CUSTOM" },
+    { "id": "email", "type": "regex", "entity": "EMAIL" },
+    { "id": "phone_jp", "type": "regex", "entity": "PHONE" },
+    { "id": "amount_jpy", "type": "regex", "entity": "AMOUNT" },
+    { "id": "date_jp", "type": "regex", "entity": "DATE" },
+    { "id": "case_id", "type": "regex", "entity": "CASE_ID" }
+  ],
+  "riskRules": [
+    { "id": "possible_address", "label": "住所らしき記載", "severity": "medium" },
+    { "id": "unmasked_digits", "label": "未確認の数字列", "severity": "low" }
+  ],
+  "partnerBrief": {
+    "purpose": "Wordを含む案件フォルダのマスキング済み資料をもとに、外部パートナーへ不足資料、確認事項、返信案の整理を依頼する。",
+    "doNotDo": [
+      "本人確認、法的判断、最終回答の代行をしないこと",
+      "追加の個人情報、原本、復元用mappingの提供を求めないこと",
+      "マスキング済み資料から本人や所在地を推測しようとしないこと"
+    ]
+  }
+}
